@@ -1,0 +1,33 @@
+<style>
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em;
+    }
+
+    .header-options-box {
+        width: 15em;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .header-option-link {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .header-option-link:hover {
+        color: var(--theme-colour);
+    }
+</style>
+<header>
+    <div class="logo-box">
+        PS
+    </div>
+    <div class="header-options-box">
+        <a href="/" class="header-option-link"><span class="header-option">Send</span></a>
+        <a href="/receive" class="header-option-link"><span class="header-option">Receive</span></a>
+        <a href="#" class="header-option-link"><span class="header-option">Contact</span></a>
+    </div>
+</header>

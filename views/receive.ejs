@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receive files | Quickpeer</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        #receive-details-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #receive-qrcode {
+            padding: 1em;
+            margin: 1em;
+            max-width: fit-content;
+            background: white;
+            border-radius: 0.5em;
+        }
+
+        .uid-input-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #uid-input {
+            padding: 0.5em;
+            min-width: 20em;
+            border: none;
+            outline: none;
+            color: inherit;
+            border-bottom: 2px solid var(--theme-colour-semi-transparent);
+            background: transparent;
+        }
+
+        #connect-btn {
+            padding: 0.5em 1em;
+            margin: 1em;
+            border: none;
+            outline: none;
+            color: white;
+            background: var(--theme-colour);
+            border-radius: 0.5em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include("partials/header") %>
+
+        <div class="start-content-container">
+
+            <div class="start-content">
+                <h2 class="start-content-heading">
+                    Receive files
+                </h2>
+                <p class="start-content-text">
+                    Scan the QR code or enter the connection id to receive files
+                </p>
+            </div>
+
+            <div id="receive-details-container">
+                <div id="receive-qrcode"></div>
+                <div class="uid-input-container">
+                    <input type="text" id="uid-input" placeholder="Enter the connection id">
+                    <button id="connect-btn">Connect</button>
+                </div>
+            </div>
+
+            <div id="download-files-container">
+                <h2>Download <span id="file-count">5</span> files ( <span id="file-size">15 MiB</span> )</h2>
+
+                <ul id="download-files">
+                    <li class="download-file">
+                        <span class="file-name">Img-123.png</span>
+                        <span class="file-size">12 KB</span>
+                        <span class="material-symbols-outlined indv-dwnld-btn">
+                            download
+                        </span>
+                    </li>
+                    <li class="download-file">
+                        <span class="file-name">Img-123.png</span>
+                        <span class="file-size">12 KB</span>
+                        <span class="material-symbols-outlined indv-dwnld-btn">
+                            download
+                        </span>
+                    </li>
+                    <li class="download-file">
+                        <span
+                            class="file-name">Img-123-wiqddqpdhqwdwqddwqd9dhqdgiregreigheripgherguihgiuhrgihgiuahaihgiarhgrahgfgfggbfgbdfgdbgjkgssdbgdgs.png</span>
+                        <span class="file-size">12 KB</span>
+                        <span class="material-symbols-outlined indv-dwnld-btn">
+                            download
+                        </span>
+                    </li>
+
+                </ul>
+
+                <button id="download-all-btn">Download all</button>
+            </div>
+
+            <style>
+                #download-files-container {
+                    display: none;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 1em;
+                    padding: 1em;
+                }
+
+                #download-files {
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
+                    border: 1px solid var(--theme-colour-semi-transparent);
+                    border-radius: 0.5em;
+                    width: 100%;
+                    max-height: 15em;
+                    max-width: 25em;
+                    margin-bottom: 1em;
+                    overflow-y: auto;
+                }
+
+                .download-file {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0.5em 1em;
+                }
+
+                .file-name {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    /* max-width: 70%; */
+                    flex: 7;
+                }
+
+                .file-size {
+                    font-size: 0.8em;
+                    flex: 2;
+                    text-align: center;
+                }
+
+                .indv-dwnld-btn {
+                    cursor: pointer;
+                    flex: 1;
+                }
+
+                #download-all-btn {
+                    padding: 0.5em 1em;
+                    border: none;
+                    outline: none;
+                    color: white;
+                    background: var(--theme-colour);
+                    border-radius: 0.5em;
+                    cursor: pointer;
+                }
+            </style>
+
+        </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/libjs/simplepeer.min.js"></script>
+        <script src="/libjs/qrcode.min.js"></script>
+        <script src="/js/receive.js"></script>
+        <script>
+            new QRCode(document.getElementById("receive-qrcode"), "Coming soon");
+        </script>
+</body>
+
+</html>

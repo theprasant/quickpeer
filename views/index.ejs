@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickPeer</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+
+    <%- include("partials/header") %>
+    
+    <div class="start-content-container">
+
+        <div class="start-content">
+            <h2 class="start-content-heading">
+                Receive files from your device quickly
+            </h2>
+            <p class="start-content-text">
+                Share files of any size directly from your device without saving them on the internet
+            </p>
+        </div>
+
+        <div id="file-drop-container">
+            <div id="drop-file-zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+                <p>Drag files here or click to select files</p>
+                <input type="file" id="file_upload_pc" multiple />
+            </div>
+            <div id="share-file-zone">
+                <div class="share-file-zone-heading">
+                    <div class="share-file-zone-heading-text">
+                        Sharing <b><span id="file-count">0</span></b> files (<b><span id="total-file-size">0</span></b>)
+                    </div>
+                    <button class="cancel-share">
+                        Cancel
+                    </button>
+                </div>
+                <div id="qr-code-container">
+                    <!-- <img src="/img/demo_qr.svg" alt=""> -->
+                    <div id="qrcode"></div>
+                </div>
+
+                <!-- div for link with copy button -->
+                <div id="link-container">
+                    <input type="text" id="share-link" value="https://example.com/c/eHsyUi9JiOlsakkU28" readonly>
+                    <div id="copy-btn" onclick="copyLink()">
+                        <span id="copy-link-icon" class="material-symbols-outlined">
+                            content_copy
+                        </span>
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e8eaed">
+                            <path
+                                d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                        </svg> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="send-receive-button-container">
+        <div id="send-btn" class="snd-rcv-btn" onclick="sndPage()">Send</div>
+        <div id="receive-btn" class="snd-rcv-btn" onclick="javascript:location.href=`/receive`">Receive</div>
+        <div id="snd-rcv-bg"></div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/libjs/simplepeer.min.js"></script>
+    <script src="/libjs/qrcode.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

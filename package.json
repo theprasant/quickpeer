@@ -1,0 +1,30 @@
+{
+  "name": "quickpeer",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "peer share",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "peer",
+    "share"
+  ],
+  "author": "decodeprasant",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^5.0.0",
+    "firebase": "^10.13.1",
+    "multer": "^1.4.5-lts.1",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.7.5",
+    "uuidv4": "^6.2.13"
+  }
+}

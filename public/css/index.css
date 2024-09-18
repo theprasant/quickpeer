@@ -1,0 +1,151 @@
+#file-drop-container {
+    flex: 1;
+    min-height: 100%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#drop-file-zone {
+    height: 15em;
+    width: 15em;
+    border: 2px dashed #ccc;
+    border-radius: 16px;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#drop-file-zone:hover {
+    border-color: #aaa;
+}
+
+#file_upload_pc {
+    opacity: 0.0;
+
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+
+    /* IE 5-7 */
+    filter: alpha(opacity=0);
+
+    /* Netscape or and older firefox browsers */
+    -moz-opacity: 0.0;
+
+    /* older Safari browsers */
+    -khtml-opacity: 0.0;
+
+    position: absolute;
+    pointer-events: none;
+}
+
+#share-file-zone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    transition: all 0.3s;
+    /* border: 1px solid green; */
+}
+
+.share-file-zone-heading {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid yellow; */
+}
+
+.cancel-share {
+    color: white;
+    background: #dc3545;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.5em;
+}
+
+#qrcode {
+    margin: 1em;
+    padding: 1em;
+    background: white;
+}
+
+#link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#share-link {
+    flex: 6;
+    background: #0057b33e;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5em 0 0 0.5em;
+    color: white;
+    font-size: 1em;
+    outline: none;
+}
+
+#copy-btn {
+    flex: 1;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #0057b33e;
+    border-radius: 0 0.5em 0.5em 0;
+    height: 100%;
+    outline: none;
+    display: inline-flex;
+    padding: 0.25em;
+    justify-content: center;
+    align-items: center;
+}
+
+#copy-btn:hover {
+    background-color: #0056b3;
+    outline: none;
+}
+
+#copy-btn:active {
+    background-color: #004286;
+}
+
+/* fixed */
+.send-receive-button-container {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: white;
+    width: 12em;
+    height: 3em;
+    border-radius: 10em;
+    display: flex;
+}
+
+.snd-rcv-btn {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    color: black;
+    cursor: pointer;
+}
+
+#snd-rcv-bg {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10em;
+    background: #007DFC;
+    transition: all 0.1s ease-in-out;
+}
